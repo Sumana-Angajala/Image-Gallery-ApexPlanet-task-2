@@ -1,0 +1,183 @@
+:root {
+  --primary: #af493f;
+  --accent: #8761d5;
+  --light-bg: #fff8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --highlight: #ff9f43;
+  --btn1: #ff416c;
+  --btn2: #f95e43;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--light-bg);
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-form,
+.image-gallery {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px var(--shadow);
+}
+
+.contact-form h2,
+.image-gallery h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 3px var(--shadow);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Buttons */
+.contact-form button,
+.upload-container button {
+  background: linear-gradient(to right, var(--btn1), var(--btn2));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover,
+.upload-container button:hover {
+  background: linear-gradient(to right, var(--btn2), var(--btn1));
+}
+
+.upload-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.upload-container input {
+  flex: 1;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+#gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tip {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ffe7d9;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #f3d1c1;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .upload-container {
+    flex-direction: column;
+  }
+
+  .upload-container input,
+  .upload-container button {
+    width: 100%;
+  }
+}
